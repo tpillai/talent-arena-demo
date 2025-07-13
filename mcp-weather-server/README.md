@@ -56,25 +56,30 @@ java -cp target/mcp-ta-weather-server-0.0.1-SNAPSHOT.jar org.springframework.ai.
 
 ## Available Tools
 
-### Weather Tool
+### Weather Tools
 
 The server integrates with the Open-Meteo API to provide weather data:
 
 #### Get Temperature
-- Description: Get the temperature (in celsius) for a specific location
+- Description: Get the temperature (in celsius) for a specific location.
 - Parameters:
-  - `latitude`: Double - The location latitude
-  - `longitude`: Double - The location longitude
-  - `city`: String - The city name (for logging purposes)
-- Example:
-```java
-CallToolResult response = client.callTool(
-    new CallToolRequest("getTemperature", Map.of(
-        "latitude", "52.377956", 
-        "longitude", "4.897070", 
-        "city", "Amsterdam"))
-);
-```
+  - `latitude`: Double - The location latitude.
+  - `longitude`: Double - The location longitude.
+  - `city`: String - The city name (for logging purposes).
+
+#### Get Air Quality
+- Description: Get the air quality for a specific location.
+- Parameters:
+  - `latitude`: Double - The location latitude.
+  - `longitude`: Double - The location longitude.
+  - `city`: String - The city name (for logging purposes).
+
+#### Get 7-Day Weather Forecast
+- Description: Get the 7-day weather forecast for a specific location.
+- Parameters:
+  - `latitude`: Double - The location latitude.
+  - `longitude`: Double - The location longitude.
+  - `city`: String - The city name (for logging purposes).
 
 ## Configuration
 

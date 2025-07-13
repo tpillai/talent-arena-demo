@@ -47,8 +47,17 @@ public class SampleClient {
 		ListToolsResult toolsList = client.listTools();
 		System.out.println("Available Tools = " + toolsList);
 
-		CallToolResult weather = client.callTool(new CallToolRequest("getTemperature", Map.of("latitude", "52.377956", "longitude", "4.897070", "city", "Amsterdam")));
+		CallToolResult weather = client.callTool(new CallToolRequest("getTemperature",
+				Map.of("latitude", "52.377956", "longitude", "4.897070", "city", "Amsterdam")));
 		System.out.println("Weather = " + weather);
+
+		CallToolResult airQuality = client.callTool(new CallToolRequest("getAirQuality",
+				Map.of("latitude", "52.377956", "longitude", "4.897070", "city", "Amsterdam")));
+		System.out.println("Air Quality = " + airQuality);
+
+		CallToolResult forecast = client.callTool(new CallToolRequest("getDailyForecast",
+				Map.of("latitude", "52.377956", "longitude", "4.897070", "city", "Amsterdam")));
+		System.out.println("Forecast = " + forecast);
 
 		client.closeGracefully();
 
