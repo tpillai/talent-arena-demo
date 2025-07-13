@@ -14,7 +14,7 @@ public class Application {
 				.tools(new GoogleSearchTool())
 				.build();
 
-		var response = rootAgent.chat("What is the weather in Amsterdam?");
+		var response = rootAgent.execute("What is the weather in Amsterdam?");
 		System.out.println(response);
 	}
 }
