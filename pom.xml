@@ -12,6 +12,20 @@
 	<name>Talent Arena</name>
 	<description>Demo project for Spring Boot</description>
 
+	<properties>
+		<adk.version>0.1.0</adk.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.adk</groupId>
+				<artifactId>google-adk</artifactId>
+				<version>${adk.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<modules>
 		<module>basic-examples</module>
 		<module>mcp-weather-server</module>
